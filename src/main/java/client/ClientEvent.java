@@ -14,7 +14,7 @@ public class ClientEvent {
 
     }
     @SubscribeEvent
-    public static void onFOVUpdate(LivingEvent.LivingUpdateEvent event){
+    public static void sprintOff(LivingEvent.LivingUpdateEvent event){
         if (event.getEntity() instanceof EntityPlayer){
             EntityPlayer player = (EntityPlayer) event.getEntity();
             if (player.isSprinting()){
