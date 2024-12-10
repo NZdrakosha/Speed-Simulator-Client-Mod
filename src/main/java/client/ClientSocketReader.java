@@ -15,7 +15,6 @@ public class ClientSocketReader {
     public static void startReading(){
         new Thread(() -> {
             try(ServerSocket clientSocket = new ServerSocket(SERVER_PORT_READ)) {
-                System.out.println("Клиент принимает информацию на порту " + SERVER_PORT_READ);
 
                 while (true){
                     Socket socket = clientSocket.accept();
@@ -35,7 +34,6 @@ public class ClientSocketReader {
             boolean value = in.readBoolean();
 
             SphereEvent.activeSphere.put(action, value);
-            System.out.println("packet send " + action + " " + SphereEvent.activeSphere.get(action));
 
             if (!value) {
                 ClientEvent.playerSoundUpSphere(player);
