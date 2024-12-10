@@ -13,15 +13,6 @@ public class ClientEvent {
         ClientSocketReader.startReading();
 
     }
-    @SubscribeEvent
-    public static void sprintOff(LivingEvent.LivingUpdateEvent event){
-        if (event.getEntity() instanceof EntityPlayer){
-            EntityPlayer player = (EntityPlayer) event.getEntity();
-            if (player.isSprinting()){
-                player.setSprinting(false);
-            }
-        }
-    }
     public static void playerSoundUpSphere(EntityPlayer player){
         player.playSound(SoundEvents.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
     }
